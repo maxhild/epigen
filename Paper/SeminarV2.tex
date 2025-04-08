@@ -1,0 +1,117 @@
+\documentclass{SeminarV2}
+\usepackage{graphicx}
+\usepackage[latin1]{inputenc}
+\usepackage{amssymb,amsmath,array}
+
+%***********************************************************************
+% !!!! IMPORTANT NOTICE ON TEXT MARGINS !!!!!
+%***********************************************************************
+%
+% Please avoid using DVI2PDF or PS2PDF converters: some undesired
+% shifting/scaling may occur when using these programs
+% It is strongly recommended to use the DVIPS converters.
+%
+% Check that you have set the paper size to A4 (and NOT to letter) in your
+% dvi2ps converter, in Adobe Acrobat if you use it, and in any printer driver
+% that you could use.  You also have to disable the 'scale to fit paper' option
+% of your printer driver.
+%
+% In any case, please check carefully that the final size of the top and
+% bottom margins is 5.2 cm and of the left and right margins is 4.4 cm.
+% It is your responsibility to verify this important requirement.  If these margin requirements and not fulfilled at the end of your file generation process, please use the following commands to correct them.  Otherwise, please do not modify these commands.
+%
+\voffset 0 cm \hoffset 0 cm \addtolength{\textwidth}{0cm}
+\addtolength{\textheight}{0cm}\addtolength{\leftmargin}{0cm}
+
+%***********************************************************************
+% !!!! USE OF THE SeminarV2 LaTeX STYLE FILE !!!!!
+%***********************************************************************
+%
+% Some commands are inserted in the following .tex example file.  Therefore to
+% set up your Seminar submission, please use this file and modify it to insert
+% your text, rather than staring from a blank .tex file.  In this way, you will
+% have the commands inserted in the right place.
+
+% Edited by Martin Bogdan.
+
+\begin{document}
+%style file for Seminar manuscripts
+\title{Was kann durch eine C++ Implementierung der DNA Histonmodifikation erreicht werden?}
+
+%***********************************************************************
+% AUTHORS INFORMATION AREA
+%***********************************************************************
+\author{Max Hild
+% DO NOT MODIFY THE FOLLOWING '\vspace' ARGUMENT
+\vspace{.3cm}\\
+%
+% Addresses and institutions (remove "1- " in case of a single institution)
+\emph{Abgegeben bei: Dr. J{\"o}rg Galle, Prof. Dr. Markus Scholz}
+% Remove the next three lines in case of a single institution
+\vspace{.1cm}\\
+Universit{\"a}t Leipzig, Institut f{\"u}r medizinische Informatik, Statistik und Epidemiologie\\
+Neues Augusteum, Augustuspl. 10, 04109 Leipzig - Germany
+}
+
+
+%***********************************************************************
+% END OF AUTHORS INFORMATION AREA
+%***********************************************************************
+
+\maketitle
+
+\begin{abstract}
+  \sloppy
+  GWAS (Genome-Wide Association Studies) sind eine der am weitesten verbreiteten Methoden
+  zur Identifizierung von genetischen Varianten, die mit komplexen Erkrankungen assoziiert sein k{\"o}nnten.
+  Einer der treibenden Faktoren der Weiterentwicklung der Forschung zum menschlichen Genom
+  war in den letzten Jahren jedoch eine Abkehr von der klassischen Sichtweise, dass die
+  gesamte Heritabilit{\"a}t von Ph{\"a}notypen lediglich durch die genetische Kodierung
+  erkl{\"a}rt werden kann. In GWAS erreichten die relevanten Ma{\ss}zahlen f{\"u}r die Heritabilit{\"a}t
+  wiederholt lediglich kleine Werte. \cite{mcclellan-2010}
+    
+  Hier zeigte sich, dass es eine Reihe weiterer Forschungszweige wie die Transkriptionsanalyse
+  sowie die Epigenetik notwendig sind, um die fehlende Heritabilität der Phänotypen zu erklären. 
+  Epigenetische Mechanismen wie DNA-Methylierung und Histonmodifikationen spielen eine entscheidende 
+  Rolle bei der Regulation der Genexpression und k{\"o}nnten somit einen Teil der "verlorenen" Heritabilität 
+  aufklären. Diese Mechanismen sind dynamisch und k{\"o}nnen durch Umweltfaktoren beeinflusst werden, 
+  was sie zu einem spannenden Forschungsfeld macht.
+  \end{abstract}
+  
+
+\section{Introduction}
+Die Heritabilit{\"a}t von Ph{\"a}notypen besser zu verstehen l{\"a}sst Forscherinnen und Forscher leichter
+nachvollziehen, wie die genetische Information kodiert ist.
+Prohaska et al. argumentieren, dass die Bedeutung des regulatorischen Systems der Epigenetik für die Vererbung gro{\ss} ist.
+\cite{prohaska-2010}
+Diese Sichtweise deckt sich mit der Ansicht von McClellan et al,
+die in ihrer Arbeit die Ergebnisse der GWAS relativieren.
+\begin{quote}
+  \sloppy
+  Eine der gr{\"o}{\ss}en Hoffnungen an die GWAS war, dass man - genauso wie eine Vielzahl von mendelschen Erkrankungen auf DNA-Ebene eingegrenzt und das beteiligte Gen samt den Mutationen identifiziert werden konnte - einfach von Einzelgen-Erkrankungen auf komplexe multigenetische Erkrankungen schlie{\ss}en k{\"o}nnte. Das ist jedoch nicht eingetreten. Befürworter werden argumentieren, dass es funktioniert hat und dass allerlei faszinierende Gene identifiziert wurden, die beispielsweise eine Prädisposition zu oder einen Schutz vor Diabetes oder Brustkrebs verleihen, aber die Tatsache bleibt, dass der Gro{\ss}teil der Erblichkeit in diesen Erkrankungen nicht den durch GWAS identifizierten Loci zugeschrieben werden kann, was eindeutig zeigt, dass dies nicht die universelle L{\"o}sung sein wird.
+\end{quote}
+\cite{mcclellan-2010}
+Zu verstehen, wie die modifikation
+
+
+\begin{footnotesize}
+
+% IF YOU DO NOT USE BIBTEX, USE THE FOLLOWING SAMPLE SCHEME FOR THE REFERENCES
+% ----------------------------------------------------------------------------
+% ----------------------------------------------------------------------------
+
+% IF YOU USE BIBTEX,
+% - DELETE THE TEXT BETWEEN THE TWO ABOVE DASHED LINES
+% - UNCOMMENT THE NEXT TWO LINES AND REPLACE 'Name_Of_Your_BibFile'
+\newpage
+
+\bibliographystyle{unsrt}
+\bibliography{own.bib}
+
+\end{footnotesize}
+
+% ****************************************************************************
+% END OF BIBLIOGRAPHY AREA
+% ****************************************************************************
+
+\end{document}
