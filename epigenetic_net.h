@@ -19,6 +19,7 @@ private:
     std::string position;
     
 public:
+    EpigeneticSite(); // Default-Konstruktor
     EpigeneticSite(const std::string& pos, ModificationState initialState = ModificationState::UNMETHYLATED);
     void setState(ModificationState newState);
     ModificationState getState() const;
@@ -35,4 +36,7 @@ public:
     void addTransition(const std::string& from, const std::string& to, double probability);
     void simulateStep();
     std::map<std::string, EpigeneticSite>& getSites();
+    void exportStateToCSV(const std::string& filename, int step, bool header = false);
+    // Wendet das deterministische Prohaska-Regelwerk an
+    void applyDeterministicProhaskaRules();
 };

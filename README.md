@@ -7,12 +7,13 @@ cd "/Users/Maxhi/Medizininformatik/Modellierung biologische Systeme/C Implementa
 gcc -o cpg_visualization cpg_visualization.c
 ./cpg_visualization
 
+./epigenetic-model
+
 # Heatmap generieren
 
 Die Heatmap kann mit der pythonerweiterung generiert werden.
+python plot_cpg_states.py
+
 
 ## Relevante Pakete installieren
 pip install pandas matplotlib seaborn numpy
-
-## Skript laufen lassen
-python plot_cpg_states.py

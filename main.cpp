@@ -7,31 +7,69 @@
 int main() {
     ConditionalNet model;
     
-    // Add epigenetic sites (example positions)
-    for (int i = 1; i <= 10; i++) {
-        model.addSite("CpG_" + std::to_string(i));
+    // Epigenetische Sites hinzufügen
+    // Beispiel: Verschiedene Anfangszustände setzen
+    model.addSite("CpG_1", ModificationState::METHYLATED);
+    model.addSite("CpG_2", ModificationState::UNMETHYLATED);
+    model.addSite("CpG_3", ModificationState::HYDROXYMETHYLATED);
+    // Für alle anderen Sites ggf. Schleife:
+    for (int i = 4; i <= 10; i++) {
+        model.addSite("CpG_" + std::to_string(i), ModificationState::UNMETHYLATED);
     }
     
-    // Add transition probabilities based on the paper model
-    // These values would be based on Prohaska's paper
-    model.addTransition("CpG_1", "CpG_2", 0.3);
-    model.addTransition("CpG_1", "CpG_3", 0.2);
-    model.addTransition("CpG_2", "CpG_4", 0.4);
+
+    // Beispielhafte Übergangswahrscheinlichkeiten gemäß Literatur:
+    // De-novo-Methylierung nach Fu et al.(Tochterstrang)
+    // model.addTransition("U", "M", 0.07);
+    // Maintenance-Fehlerrate nach Fu et al.(Methylated → Unmethylated)
+    // model.addTransition("M", "U", 0.024);
     
-    // Run simulation and visualize
-    std::cout << "Starting simulation of epigenetic modifications...\n\n";
-    
-    for (int step = 0; step < 10; step++) {
+    model.addTransition("M", "H", 0.5);
+    model.addTransition("H", "M", 0.5);
+    model.addTransition("H", "U", 0.5);
+    model.addTransition("U", "H", 0.5);
+    model.addTransition("C", "F", 0.5);
+    model.addTransition("F", "C", 0.5);
+    model.addTransition("U", "C", 0.5);
+    model.addTransition("C", "U", 0.5);
+    model.addTransition("M", "C", 0.5);
+    // Zusätzliche Übergänge für H, F, C
+    model.addTransition("H", "U", 0.5);
+    model.addTransition("H", "M", 0.5);
+    model.addTransition("M", "H", 0.5);
+    model.addTransition("U", "H", 0.5);
+
+    // Simulation initialisieren
+    std::cout << "Starten der Simulation...\n\n";
+
+    bool useProhaska = true; // Flag für deterministisch/stochastisch
+    bool useMarkov = true; // Flag für Markov-Chain
+    std::string csvFile = "cpg_states_stoch_det.csv";
+    // Header nur beim ersten Mal schreiben
+    model.exportStateToCSV(csvFile, 0, true);
+
+    for (int step = 0; step < 100000; step++) { // Erhöhe die Schrittzahl hier
         std::cout << "Step " << step << "\n";
         NetVisualizer::displayNetwork(model);
         NetVisualizer::displayStateDistribution(model);
         std::cout << "\n";
         
-        // Simulate next step
-        model.simulateStep();
+        if (useProhaska) {
+            model.applyDeterministicProhaskaRules();
+            if (useMarkov){
+                model.simulateStep();
+            }
+
+        } else {
+            // Simulieren des nächsten Schritts
+            model.simulateStep();
+        }
+
+        // CSV-Export (kein Header mehr)
+        model.exportStateToCSV(csvFile, step + 1, false);
         
-        // Pause for visibility
-        std::this_thread::sleep_for(std::chrono::seconds(1));
+        // Pause für Sichtbarkeit der Simulation
+        //std::this_thread::sleep_for(std::chrono::seconds(1));
     }
     
     return 0;

@@ -36,7 +36,7 @@
 %%   Grave accent  \`     Left brace    \{     Vertical bar  \|
 %%   Right brace   \}     Tilde         \~}
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{esann}
+\ProvidesClass{SeminarV2}
               [1999/01/07 v1.4a
  Standard LaTeX document class]
 \newcommand\@ptsize{}
