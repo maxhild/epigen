@@ -15,16 +15,16 @@ Antony~J. Bannister and Tony Kouzarides.
 \newblock {Regulation of chromatin by histone modifications}.
 \newblock {\em Cell Research}, 21(3):381--395, 2011.
 
+\bibitem{tollefsbol-2014}
+Trygve Tollefsbol.
+\newblock {\em {Transgenerational epigenetics}}.
+\newblock Elsevier, 2014.
+
 \bibitem{fu-2010}
 Audrey~Qiuyan Fu, Diane~P. Genereux, Reinhard St\"{o}ger, Charles~D. Laird, and
   Matthew Stephens.
 \newblock {Statistical inference of transmission fidelity of DNA methylation
   patterns over somatic cell divisions in mammals}.
 \newblock {\em arXiv preprint arXiv:1011.2025}, 2010.
-
-\bibitem{tollefsbol-2014}
-Trygve Tollefsbol.
-\newblock {\em {Transgenerational epigenetics}}.
-\newblock Elsevier, 2014.
 
 \end{thebibliography}

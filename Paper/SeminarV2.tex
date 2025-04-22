@@ -90,6 +90,7 @@ Das regulatorische System der Epigenetik wird als ein Schlüssel zur erkennung d
 Diese anerkannte Theorie wird durch Evidenz unterstützt. Jedoch ist es noch ein Forschungsgegenstand, wie genau die komplexeren Systeme, die bei Eukaryoten zu finden sind, gesteuert werden. \cite{prohaska-2010}
 Auch aus der Sicht von Bannister {\&} Kouzarides spielen Histonmodifikationen eine zentrale Rolle im epigenetischen Code. 
 Sie beschreiben die verschiedenen Writer, Eraser und Reader von Histonmarken und deren Einfluss auf Transkription, DNA-Reparatur und Chromosomenkondensation \cite{bannister-2011}.  
+Transgenerationale Epigenetikstudien zeigen zudem, dass bestimmte epigenetische Markierungen selbst \"{u}ber mehrere Generationen hinweg erhalten bleiben k\"{o}nnen und so zur fehlenden Heritabilit\"{a}t beitragen \cite{tollefsbol-2014}.
 Diese Forschung deckt sich mit der Einschätzung von McClellan et al.
 die in ihrer Arbeit ein Pl\"{a}doyer f\"{u}r die Forschung
 nach der fehlenden Heritabilit\"{a}t halten.
@@ -145,13 +146,6 @@ F\"{u}r die Visualisierung wird ein separates Python-Skript verwendet, das die C
 \section{Ergebnisse}
 Die Simulation erm\"{o}glicht es, die zeitliche Entwicklung der epigenetischen Zust\"{a}nde 
 \"{u}ber mehrere Generationen zu beobachten. Abbildung \ref{fig:cpg_states} zeigt die Visualisierung der ersten Version einer Simulation.
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.9\textwidth]{images/cpg_states_plot.png}
-    \caption{Visualisierung der CpG-Zust\"{a}nde \"{u}ber die Zeit. Links: Heatmap der Zust\"{a}nde an verschiedenen 
-    CpG-Stellen \"{u}ber die Zeit (U: grau, M: blau, H: gr\"{u}n, F: rot, C: gelb). Rechts: Anzahl der CpG-Stellen in jedem Zustand \"{u}ber die Zeit.}
-    \label{fig:cpg_states}
-\end{figure}
 \section{Validierung des Modells mit realistischen Daten}
 Im n\"{a}chsten Schritt wurde eine Visualisierung mit \"{U}bergangswahrscheinlichkeiten aus reellen Daten durchgef\"{u}hrt. Die f\"{u}r diese Simulation gew\"{a}hlten \"{U}bergangswahrscheinlichkeiten basieren auf quantitativen Sch\"{a}tzungen aus der Literatur.  
 Hier wurden die Ergebnisse von Fu et al. (2010) genutzt, die mittels eines Bayes'schen Modells an humanen FMR1-Daten folgende Raten ermittelt haben \cite{fu-2010}:
@@ -163,7 +157,64 @@ Hier wurden die Ergebnisse von Fu et al. (2010) genutzt, die mittels eines Baye
 
 Hier zeigte sich, dass bei einer Anwendung der Werte aus der Fu et al. viele Iterationen notwendig sind, um Effekte zu sehen.
 Aus diesem Grund wurde die Länge der Simulation auf 1000 und dann 100000 Iterationen gesetzt. Es wurde für die Wahrscheinlichkeit einer Methylierung der Wert des Tochterstrangs,
-also 0,07, verwendet. Die Wahrscheinlichkeit der De-novo-Methylierung wurde auf 0,1 gesetzt, um die Simulation zu beschleunigen. Die Ergebnisse der Simulation mit den \"{U}bergangswahrscheinlichkeiten aus Fu et al. (2010) sind in Abbildung \ref{fig:cpg_states_1000} und \ref{fig:cpg_states_fu_100000} dargestellt.
+also 0,07, verwendet. Die Wahrscheinlichkeit der De-novo-Methylierung wurde auf 0,1 gesetzt, um die Simulation zu beschleunigen. Die Ergebnisse der Simulation mit den \"{U}bergangswahrscheinlichkeiten nach Fu et al. (2010) sind in Abbildung \ref{fig:cpg_states_1000} und \ref{fig:cpg_states_fu_100000} dargestellt.
+Hier ist zu beachten, dass diese Ergebnisse zur besseren Visualisierung einige Übergangswahrscheinlichkeiten sowie einige Zustände gar nicht abbilden.
+
+Die Ergebnisse zeigen deutliche Muster in der r\"{a}umlichen und zeitlichen 
+Verteilung der epigenetischen Zust\"{a}nde. Insbesondere kann man beobachten, wie sich die Methylierungszust\"{a}nde in bestimmten Regionen zusammenh\"{a}ufen und wie sich diese Cluster \"{u}ber die Zeit entwickeln.
+Als Erweiterung wurde nun das stochastische Modell mit dem regulatorischen System nach Prohaska et al. erweitert.
+Die Simulationsergebnisse zeigen deutliche Unterschiede zwischen den beiden Modellierungsansätzen. Im deterministischen Modell nach Prohaska bilden sich schnell stabile Muster heraus. Insbesondere die Clusterstatistik zeigte bei unmethylierten Stellen (Zustand U) eine auffällige Häufigkeit von etwa 0,5 bei Clustergrößen von 2 und 6.
+Im Gegensatz dazu präsentierte das stochastische Modell ein dynamischeres und weniger stabiles Verhalten. Die Clusteranalyse ergab hierbei bei unmethylierten Stellen folgende Verteilung der Häufigkeiten: etwa 0,67 für Clustergröße 1, 0,23 für Clustergröße 2, 0,06 für Größe 3 und etwa 0,01 für Größe 4.
+Das erklärt ebenfalls das unterschiedliche Verhalten bei der Autokorrelation. Hier weist das deterministische Modell logischerweise 0 auf, da dieses Modell schnell stabile Zustände erreicht. Das Stochastische Modell erreicht je nach Konfiguration unterschiedlich schnell stabile Zustände.
+
+Die beigefügten Abbildungen illustrieren den Verlauf der CpG-Zustände im deterministischen (Abb. \ref{fig:cpg_states_det}) und im stochastischen Modell (Abb. \ref{fig:cpg_states_stoch}).
+
+Eine weitere Statistik, die zur Beurteilung der Modelle verwendet wurde, ist die Autokorrelation.
+Hierbei wurde die Autokorrelation der CpG-Stellen in den verschiedenen Zuständen über die Zeit analysiert.
+Die Autokorrelation misst die Korrelation eines Signals mit sich selbst zu verschiedenen Zeitpunkten. Ein positiver Wert deutet darauf hin, dass ähnliche Zustände in der Zeitreihe auftreten, während ein negativer Wert auf eine Abnahme der Ähnlichkeit hinweist.
+Sie wurde für den Zustand U berechnet, da dieser Zustand "Unmethyliert" repräsentiert und somit eine interessante Basislinie für die Analyse der Zustände, in denen die Transkription möglich ist, innerhalb des Modells darstellt.
+
+Im letzten Schritt wurden beide Modelle kombiniert, um die Vorteile beider Ansätze zu nutzen.
+Hierbei wurde in jedem durchlauf das stochastische Modell mit den Übergangswahrscheinlichkeiten aus Fu et al. (2010) verwendet, bevor die Regeln nach Prohaska et al. angewendet wurden.
+Die Ergebnisse zeigen, dass die Kombination der beiden Ansätze zu einer stabileren und biologisch realistischeren Simulation führt. Die Clusterbildung ist weniger ausgeprägt als im deterministischen Modell, aber stabiler als im stochastischen Modell. Dies deutet darauf hin, dass die Kombination der beiden Ansätze eine vielversprechende Basis für zukünftige Simulationen darstellt.
+
+\section{Diskussion}
+Im Vergleich mit der deterministischen Implementierung von Prohaska et al. zeigt das stochastische Modell eine größere Variabilität in der zeitlichen Entwicklung der CpG-Zustände. Dies könnte darauf hindeuten, dass das stochastische Modell besser geeignet ist, um die biologischen Prozesse der Histonmodifikation und deren Einfluss auf die Genexpression zu erfassen. Die Ergebnisse der Simulationen zeigen, dass das stochastische Modell in der Lage ist, komplexe Muster zu erzeugen, die in der Natur beobachtet werden können.
+Das deterministische Modell zeigt eine größere Stabilität, die sich in der Bildung stabiler Cluster widerspiegelt. Diese Stabilität könnte in biologischen Systemen von Bedeutung sein, da hier das Ziel eine robuste Regulation der Genexpression wäre.
+Die Kombination des stochastischen und des deterministischen Modells weist als Erweiterung den realistischsten Verlauf auf, und nutzt die Vorteile beider Ansätze. 
+Das kann als Äquivalent der biologisch gewollten Anpassung des regulatorischen Systems und der Einflüsse durch die Umwelt betrachtet werden.
+
+\subsection{Weitere Nutzung}
+Im Modul main.cpp kann das Modell vielfältig parametrisiert werden. Neben der Auswahl der verschiedenen Methoden (Markov sowie Prohaska-Regelbasiert) können auch aus der Forschung geschätzte Übergangswahrscheinlichkeiten sowie die Anzahl der Iterationen und die Anzahl der CpG-Stellen eingestellt werden.
+Das ermöglicht eine vielfältige Nutzung des Modells um verschiedene Szenarien zu simulieren und deren Auswirkungen auf die CpG-Zustände zu analysieren.
+Durch die Übergangswahrscheinlichkeiten könnten verschiedene Risikofaktoren, die das regulatorische System beeinflussen könnten, mit der regelbasierten Simulation kombiniert werden.
+\subsection{Limitationen und Ausblick}
+Obwohl das Modell viele Aspekte der epigenetischen Regulation abbildet, gibt es Einschr\"{a}nkungen:
+\begin{itemize}
+    \item Die \"{U}bergangswahrscheinlichkeiten sind aktuell statisch und basieren auf Literaturwerten oder Annahmen. Eine Kalibrierung mit experimentellen Daten sowie ein Training dieser k\"{o}nnte die Aussagekraft weiter erh\"{o}hen indem das epigenetische neuronale Netz erweitert wird.
+    \item Die Validierung erfolgte bisher nur qualitativ. Eine quantitative Validierung gegen experimentelle Zeitreihen ist ein n\"{a}chster Schritt.
+    \item Weitere epigenetische Mechanismen (z.B. DNA-Acetylierung, Interaktion mit Transkriptionsfaktoren) k\"{o}nnten integriert werden, um das Modell zu erweitern.
+    \item Die Annahmen von Prohaska et al. müssten aktualisert und erweitert werden, um die Dynamik der Histonmodifikation bestmöglich abzubilden.
+\end{itemize}
+
+\section{Fazit}
+Die C++ Implementierung der DNA-Histonmodifikation erm\"{o}glicht ein tieferes Verst\"{a}ndnis der dynamischen Prozesse, die der epigenetischen Regulation zugrunde liegen. Durch die Kombination von effizienter Simulation und anschaulicher Visualisierung k\"{o}nnen komplexe epigenetische Muster simuliert und analysiert werden.
+Diese Art der Modellierung kann dazu beitragen, die fehlende Heritabilit\"{a}t besser zu verstehen, indem sie aufzeigt, wie epigenetische Mechanismen zur Vererbung ph\"{a}notypischer Merkmale beitragen k\"{o}nnen. 
+Zuk\"{u}nftige Erweiterungen der Implementierung k\"{o}nnten eine parallele Simulation von Eltern und Kind Str\"{a}ngen beinhalten, um die transgenerationale Vererbung von epigenetischen Markierungen zu untersuchen.
+Zudem könnte ein Messfehlerparameter eingeführt werden.
+Die Nutzung von weiteren experimentellen Daten kann zur Validierung des Modells sowie zur Simulation spezifischer genetischer Erkrankungen genutzt werden, um potenzielle epigenetische Therapieans\"{a}tze zu identifizieren.
+Weiterhin können mit dieser Implementierung Erwartungswerte basierend auf vergangenen Beobachtungen errechnet werden. So kann \"{u}ber l\"{a}ngere Zeit beobachtet werden, wie sich das epigenetische regulatorische System verhalten w\"{u}rde, wenn bestimmte Annahmen \"{u}ber die Histonmodifikation der Wahrheit entsprechen.
+
+\section{Abbildungen}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{images/cpg_states_plot.png}
+  \caption{Visualisierung der CpG-Zust\"{a}nde \"{u}ber die Zeit. Links: Heatmap der Zust\"{a}nde an verschiedenen 
+  CpG-Stellen \"{u}ber die Zeit (U: grau, M: blau, H: gr\"{u}n, F: rot, C: gelb). Rechts: Anzahl der CpG-Stellen in jedem Zustand \"{u}ber die Zeit.}
+  \label{fig:cpg_states}
+\end{figure}
+
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.9\textwidth]{images/cpg_states_plot_fu_1000.png}
@@ -177,13 +228,6 @@ also 0,07, verwendet. Die Wahrscheinlichkeit der De-novo-Methylierung wurde auf 
   \caption{Visualisierung mit den Wahrscheinlichkeiten aus Fu et al. (2010) und 100000 Iterationen. \cite{fu-2010}}
   \label{fig:cpg_states_fu_100000}
 \end{figure}
-
-Die Ergebnisse zeigen deutliche Muster in der r\"{a}umlichen und zeitlichen 
-Verteilung der epigenetischen Zust\"{a}nde. Insbesondere kann man beobachten, wie sich die Methylierungszust\"{a}nde in bestimmten Regionen zusammenh\"{a}ufen und wie sich diese Cluster \"{u}ber die Zeit entwickeln.
-Als Erweiterung wurde nun das stochastische Modell mit dem regulatorischen System nach Prohaska et al. erweitert.
-Die Simulationsergebnisse zeigen deutliche Unterschiede zwischen den beiden Modellierungsansätzen. Im deterministischen Modell nach Prohaska bilden sich schnell stabile Muster heraus. Insbesondere die Clusterstatistik zeigte bei unmethylierten Stellen (Zustand U) eine auffällige Häufigkeit von etwa 0,5 bei Clustergrößen von 2 und 6.
-Im Gegensatz dazu präsentierte das stochastische Modell ein dynamischeres und weniger stabiles Verhalten. Die Clusteranalyse ergab hierbei bei unmethylierten Stellen folgende Verteilung der Häufigkeiten: etwa 0,67 für Clustergröße 1, 0,23 für Clustergröße 2, 0,06 für Größe 3 und etwa 0,01 für Größe 4.
-Die beigefügten Abbildungen illustrieren den Verlauf der CpG-Zustände im deterministischen (Abb. \ref{fig:cpg_states_det}) und im stochastischen Modell (Abb. \ref{fig:cpg_states_stoch}).
 
 \begin{figure}[htbp]
 \centering
@@ -213,10 +257,6 @@ Die beigefügten Abbildungen illustrieren den Verlauf der CpG-Zustände im deter
   \label{fig:cpg_states_cluster_stoch}
   \end{figure}
 
-Eine weitere Statistik, die zur Beurteilung der Modelle verwendet wurde, ist die Autokorrelation.
-Hierbei wurde die Autokorrelation der CpG-Stellen in den verschiedenen Zuständen über die Zeit analysiert.
-Die Autokorrelation misst die Korrelation eines Signals mit sich selbst zu verschiedenen Zeitpunkten. Ein positiver Wert deutet darauf hin, dass ähnliche Zustände in der Zeitreihe auftreten, während ein negativer Wert auf eine Abnahme der Ähnlichkeit hinweist.
-Sie wurde für den Zustand U berechnet, da dieser Zustand "Unmethyliert" repräsentiert und somit eine interessante Basislinie für die Analyse der Zustände, in denen die Transkription möglich ist, innerhalb des Modells darstellt.
 
 \begin{figure} [htbp]
   \centering
@@ -232,32 +272,6 @@ Sie wurde für den Zustand U berechnet, da dieser Zustand "Unmethyliert" repräs
   \label{fig:cpg_states_auto_det}
 \end{figure}
 
-Im letzten Schritt wurden beide Modelle kombiniert, um die Vorteile beider Ansätze zu nutzen.
-Hierbei wurde in jedem durchlauf das stochastische Modell mit den Übergangswahrscheinlichkeiten aus Fu et al. (2010) verwendet, bevor die Regeln nach Prohaska et al. angewendet wurden.
-Die Ergebnisse zeigen, dass die Kombination der beiden Ansätze zu einer stabileren und biologisch realistischeren Simulation führt. Die Clusterbildung ist weniger ausgeprägt als im deterministischen Modell, aber stabiler als im stochastischen Modell. Dies deutet darauf hin, dass die Kombination der beiden Ansätze eine vielversprechende Basis für zukünftige Simulationen darstellt.
-
-\section{Diskussion}
-Im Vergleich mit der deterministischen Implementierung von Prohaska et al. zeigt das stochastische Modell eine größere Variabilität in der zeitlichen Entwicklung der CpG-Zustände. Dies könnte darauf hindeuten, dass das stochastische Modell besser geeignet ist, um die biologischen Prozesse der Histonmodifikation und deren Einfluss auf die Genexpression zu erfassen. Die Ergebnisse der Simulationen zeigen, dass das stochastische Modell in der Lage ist, komplexe Muster zu erzeugen, die in der Natur beobachtet werden können.
-Das deterministische Modell zeigt eine größere Stabilität, die sich in der Bildung stabiler Cluster widerspiegelt. Diese Stabilität könnte in biologischen Systemen von Bedeutung sein, da hier das Ziel eine robuste Regulation der Genexpression wäre.
-Die Kombination des stochastischen und des deterministischen Modells weist als Erweiterung den realistischsten Verlauf auf, und nutzt die Vorteile beider Ansätze. 
-Das kann als Äquivalent der biologisch gewollten Anpassung des regulatorischen Systems und der Einflüsse durch die Umwelt betrachtet werden.
-
-\subsection{Limitationen und Ausblick}
-Obwohl das Modell viele Aspekte der epigenetischen Regulation abbildet, gibt es Einschr\"{a}nkungen:
-\begin{itemize}
-    \item Die \"{U}bergangswahrscheinlichkeiten sind aktuell statisch und basieren auf Literaturwerten oder Annahmen. Eine Kalibrierung mit experimentellen Daten k\"{o}nnte die Aussagekraft weiter erh\"{o}hen.
-    \item Die Validierung erfolgte bisher nur qualitativ. Eine quantitative Validierung gegen experimentelle Zeitreihen ist ein n\"{a}chster Schritt.
-    \item Weitere epigenetische Mechanismen (z.B. DNA-Acetylierung, Interaktion mit Transkriptionsfaktoren) k\"{o}nnten integriert werden, um das Modell zu erweitern.
-\end{itemize}
-
-\section{Fazit}
-Die C++ Implementierung der DNA-Histonmodifikation erm\"{o}glicht ein tieferes Verst\"{a}ndnis der dynamischen Prozesse, die der epigenetischen Regulation zugrunde liegen. Durch die Kombination von effizienter Simulation und anschaulicher Visualisierung k\"{o}nnen komplexe epigenetische Muster erkannt und analysiert werden.
-Diese Art der Modellierung kann dazu beitragen, die fehlende Heritabilit\"{a}t besser zu verstehen, indem sie aufzeigt, wie epigenetische Mechanismen zur Vererbung ph\"{a}notypischer Merkmale beitragen k\"{o}nnen. Die Ergebnisse unterst\"{u}tzen die These von Prohaska et al., dass das regulatorische System der Epigenetik eine wesentliche Rolle bei der Vererbung spielt, die \"{u}ber die klassische genetische Kodierung hinausgeht.
-Transgenerationale Epigenetikstudien zeigen zudem, dass bestimmte epigenetische Markierungen selbst \"{u}ber mehrere Generationen hinweg erhalten bleiben k\"{o}nnen und so zur fehlenden Heritabilit\"{a}t beitragen \cite{tollefsbol-2014}.
-Zuk\"{u}nftige Erweiterungen der Implementierung k\"{o}nnten eine parallele Simulation von Eltern und Kind Str\"{a}ngen beinhalten, um die transgenerationale Vererbung von epigenetischen Markierungen zu untersuchen.
-Zudem könnte ein Messfehlerparameter eingeführt werden.
-Die Nutzung von weiteren experimentellen Daten kann zur Validierung des Modells sowie zur Simulation spezifischer genetischer Erkrankungen genutzt werden, um potenzielle epigenetische Therapieans\"{a}tze zu identifizieren.
-Weiterhin können mit dieser Implementierung Erwartungswerte basierend auf vergangenen Beobachtungen errechnet werden. So kann \"{u}ber l\"{a}ngere Zeit beobachtet werden, wie sich das epigenetische regulatorische System verhalten w\"{u}rde, wenn bestimmte Annahmen \"{u}ber die Histonmodifikation der Wahrheit entsprechen.
 
 \begin{footnotesize}
 \newpage
