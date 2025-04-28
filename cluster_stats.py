@@ -34,8 +34,7 @@ def cluster_size_distribution(csv_file, state='M'):
     plt.title(f'Clustergrößenverteilung für Zustand {state}')
     plt.grid(alpha=0.3)
     plt.tight_layout()
-    plt.show()
-    plt.savefig("cluster_size_distribution_stoch_det.png", dpi=300)
+    plt.savefig("./Paper/Images/Histone_Prohaska_and_Markov_1000_cluster.png")
     
     # Rückgabe der Verteilung
     return pd.Series(clusters).value_counts().sort_index()
@@ -73,10 +72,10 @@ def spatial_autocorrelation(csv_file, state='M', max_dist=10):
     plt.grid(alpha=0.3)
     plt.tight_layout()
     plt.show()
-    plt.savefig("spatial_autocorrelation_stoch.png", dpi=300)
+    plt.savefig("./Paper/Images/Histone_Prohaska_and_Markov_1000_autocor.png")
 
     return pd.Series(ac, index=range(1, max_dist+1))
 
 
-cluster_dist = cluster_size_distribution("cpg_states_stoch_det.csv", state='U')
-autocorr = spatial_autocorrelation("cpg_states_stoch_det.csv", state='U')
+cluster_dist = cluster_size_distribution("Histone_Prohaska_and_Markov_1000.csv", state='U')
+autocorr = spatial_autocorrelation("Histone_Prohaska_and_Markov_1000.csv", state='U')

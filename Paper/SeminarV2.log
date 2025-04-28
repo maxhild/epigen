@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.18)  22 APR 2025 18:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.18)  28 APR 2025 12:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**SeminarV2
-(./SeminarV2.tex
+**/Users/Maxhi/Medizininformatik/Modellierung_biologische_Systeme/C_Implementation_Prohaska/Paper/SeminarV2
+(/Users/Maxhi/Medizininformatik/Modellierung_biologische_Systeme/C_Implementation_Prohaska/Paper/SeminarV2.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (./SeminarV2.cls
@@ -22,40 +22,31 @@ File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
-)
-(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/keyval.sty
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
-)
-(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphics.sty
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/trig.sty
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-)
-(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-def/pdftex.def
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen141
 \Gin@req@width=\dimen142
-)
-(/usr/local/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks18
 \inpenc@posthook=\toks19
-)
-(/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/amssymb.sty
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks20
 \symAMSa=\mathgroup4
@@ -63,25 +54,21 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-))
-(/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsmath.sty
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2023/05/13 v2.17o AMS math features
 \@mathmargin=\skip50
 
 For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsgen.sty
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks21
 \ex@=\dimen143
-))
-(/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsbsy.sty
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen144
-)
-(/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsopn.sty
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count196
@@ -131,8 +118,7 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \mathdisplay@stack=\toks25
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
-)
-(/usr/local/texlive/2024/texmf-dist/tex/latex/tools/array.sty
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/array.sty
 Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \col@sep=\dimen152
 \ar@mcellbox=\box53
@@ -141,13 +127,11 @@ Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \extratabsurround=\skip53
 \backup@length=\skip54
 \ar@cellbox=\box54
-)
-(/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count274
 \l__pdf_internal_box=\box55
-)
-(./SeminarV2.aux)
+) (./SeminarV2.aux)
 \openout1 = `SeminarV2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
@@ -164,8 +148,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
 LaTeX Font Info:    ... okay on input line 38.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
 LaTeX Font Info:    ... okay on input line 38.
-
-(/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count275
 \scratchdimen=\dimen154
@@ -180,186 +163,441 @@ LaTeX Font Info:    ... okay on input line 38.
 \everyMPtoPDFconversion=\toks28
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 LaTeX Font Info:    Trying to load font information for U+msa on input line 62.
-
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 62.
-
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 Overfull \hbox (10.74768pt too wide) in paragraph at lines 62--62
  [][] 
  []
 
+
+LaTeX Warning: Citation `mcclellan-2010' on page 1 undefined on input line 68.
+
+
+LaTeX Warning: Citation `prohaska-2010' on page 1 undefined on input line 71.
+
+
+LaTeX Warning: Citation `prohaska-2010' on page 1 undefined on input line 86.
+
+
+LaTeX Warning: Citation `bannister-2011' on page 1 undefined on input line 88.
+
+
+LaTeX Warning: Citation `tollefsbol-2014' on page 1 undefined on input line 89.
+
+
+LaTeX Warning: Citation `mcclellan-2010' on page 1 undefined on input line 105.
+
 [1
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (4.87715pt too wide) in paragraph at lines 124--126
-\OT1/cmr/m/n/10 Zur Mod-el-lierung der DNA-Histonmodifikation wurde eine C++ Im
--ple-men-tierung
+
+LaTeX Warning: Citation `filon-2010' on page 2 undefined on input line 118.
+
+
+Overfull \hbox (4.87715pt too wide) in paragraph at lines 122--124
+\OT1/cmr/m/n/10 Zur Mod-el-lierung der DNA-Histonmodifikation wurde eine C++ Im-ple-men-tierung
  []
 
 
-Overfull \hbox (15.5715pt too wide) in paragraph at lines 124--126
-\OT1/cmr/m/n/10 nehmen: Das stochastis-che Mod-ell basiert auf einem Markov-Pro
-zess, der []Uberg^^?ange
+Overfull \hbox (1.51593pt too wide) in paragraph at lines 122--124
+[]\OT1/cmr/m/n/10 Uberg^^?ange zwis-chen f^^?unf m^^?oglichen Zust^^?anden an jeder Histone-Stelle beschreibt.
  []
 
 
-Overfull \hbox (2.08537pt too wide) in paragraph at lines 124--126
-\OT1/cmr/m/n/10 zwis-chen f^^?unf m^^?oglichen Zust^^?anden an jeder CpG-Stelle
- beschreibt: Un-methyliert
+Overfull \hbox (72.2105pt too wide) in paragraph at lines 122--124
+\OT1/cmr/m/n/10 Histone-Stelle den n^^?achsten Zu-s-tand basierend auf den definierten []Ubergangswahrscheinlichkeiten
  []
 
 
-Overfull \hbox (19.09938pt too wide) in paragraph at lines 124--126
-\OT1/cmr/m/n/10 methyliert als auch Histon-modifiziert) und Komplex-gebunden (C
-). Diese []Uberg^^?ange
+Overfull \hbox (3.89551pt too wide) in paragraph at lines 122--124
+\OT1/cmr/m/n/10 stochastis-chen Schritt angewen-det wer-den. Dadurch entsteht ein hy-brider Ansatz,
  []
 
 
-Overfull \hbox (3.89551pt too wide) in paragraph at lines 124--126
-\OT1/cmr/m/n/10 stochastis-chen Schritt angewen-det wer-den. Dadurch entsteht e
-in hy-brider Ansatz,
- []
-
-
-Overfull \hbox (27.98811pt too wide) in paragraph at lines 124--126
-\OT1/cmr/m/n/10 der sowohl de-ter-min-is-tis-che Nach-barschaft-sregeln als auc
-h stochastis-che Ver^^?anderungen
+Overfull \hbox (27.98811pt too wide) in paragraph at lines 122--124
+\OT1/cmr/m/n/10 der sowohl de-ter-min-is-tis-che Nach-barschaft-sregeln als auch stochastis-che Ver^^?anderungen
  []
 
 [2]
-Overfull \hbox (23.40486pt too wide) in paragraph at lines 135--138
-\OT1/cmr/m/n/10 Zeitschrit-ten von 1 Zeit-ein-heit durchgef^^?uhrt, wobei die [
-]Ubergangswahrscheinlichkeiten
+Overfull \hbox (9.25677pt too wide) in paragraph at lines 132--137
+\OT1/cmr/m/n/10 wird. Die Sim-u-la-tion wird f^^?ur eine bes-timmte An-zahl von It-er-a-tio-nen durchgef^^?uhrt,
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.143 ... epigenetic_net.cpp hinzugefügt werden.}
+                                                   Diese Zustände müssen e...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 143.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.143 ... epigenetic_net.cpp hinzugefügt werden.}
+                                                   Diese Zustände müssen e...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.143 ... epigenetic_net.cpp hinzugefügt werden.}
+                                                   Diese Zustände müssen e...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 143.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.143 ...et.cpp hinzugefügt werden.} Diese Zustä
+                                                  nde müssen ebenfalls mit ...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 143.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.143 ...hinzugefügt werden.} Diese Zustände mü
+                                                  ssen ebenfalls mit Kürzel...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 143.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.143 ...Diese Zustände müssen ebenfalls mit Kü
+                                                  rzel in allen anderen Skri...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 143.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.143 ...t Kürzel in allen anderen Skripten ergä
+                                                  nzt werden.
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.144 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.144 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (349.5914pt too wide) in paragraph at lines 143--144
+[]\OT1/cmr/bx/n/10 Erweiterungen k^^?onnen in epigenetic$[]\OML/cmm/m/it/10 et:cpphinzugef[]gtwerden:DieseZust[]ndem[]ssenebenfallsmitK[]rzelinallenanderenSkriptenerg[]nztwerden:[]$ 
+ []
+
+[3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+
+LaTeX Warning: Citation `fu-2010' on page 4 undefined on input line 160.
+
+
+Overfull \hbox (29.12708pt too wide) in paragraph at lines 159--161
+\OT1/cmr/m/n/10 Im n^^?achsten Schritt wurde eine Vi-su-al-isierung mit []Ubergangswahrscheinlichkeiten
  []
 
 
-Overfull \hbox (10.21048pt too wide) in paragraph at lines 139--145
-\OT1/cmr/m/n/10 den Zu-griff auf be-nach-barte Stellen, was f^^?ur die kon-di-t
-ionalen []Uberg^^?ange notwendig
+Overfull \hbox (102.89575pt too wide) in paragraph at lines 159--161
+\OT1/cmr/m/n/10 aus reellen Daten durchgef^^?uhrt. Die f^^?ur diese Sim-u-la-tion gew^^?ahlten []Ubergangswahrscheinlichkeiten
  []
 
 
-Overfull \hbox (27.75671pt too wide) in paragraph at lines 139--145
-\OT1/cmr/m/n/10 spez-i-fizierten Wahrschein-lichkeiten durchzuf^^?uhren. Die []
-Ubergangswahrscheinlichkeiten
+Overfull \hbox (4.53802pt too wide) in paragraph at lines 164--165
+[]\OT1/cmr/bx/n/10 De-novo-Methylierungsrate (Tochter-strang)\OT1/cmr/m/n/10 : Me-dian 0,07 (80 %
  []
 
 
-Overfull \hbox (10.2659pt too wide) in paragraph at lines 147--149
-\OT1/cmr/m/n/10 Die Sim-u-la-tion erm^^?oglicht es, die zeitliche En-twick-lung
- der epi-genetis-chen Zust^^?ande
+Overfull \hbox (1.82149pt too wide) in paragraph at lines 166--176
+\OT1/cmr/m/n/10 Die Ergeb-nisse der Sim-u-la-tion mit den []Ubergangswahrscheinlichkeiten nach
  []
 
 
-Overfull \hbox (4.12704pt too wide) in paragraph at lines 150--152
-\OT1/cmr/m/n/10 Im n^^?achsten Schritt wurde eine Vi-su-al-isierung mit []Uberg
-angswahrscheinlichkeiten
+Overfull \hbox (51.84926pt too wide) in paragraph at lines 166--176
+\OT1/cmr/m/n/10 dass diese Ergeb-nisse zur besseren Vi-su-al-isierung einige []Ubergangswahrscheinlichkeiten
  []
 
 
-Overfull \hbox (77.89572pt too wide) in paragraph at lines 150--152
-\OT1/cmr/m/n/10 aus reellen Daten durchgef^^?uhrt. Die f^^?ur diese Sim-u-la-ti
-on gew^^?ahlten []Ubergangswahrscheinlichkeiten
+Overfull \hbox (32.5623pt too wide) in paragraph at lines 166--176
+\OT1/cmr/m/n/10 Zust^^?ande. Ins-beson-dere kann man beobachten, wie sich die Methylierungszust^^?ande
  []
 
-[3] [4{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1
-.enc}] [5]
-<images/cpg_states_plot.png, id=26, 1156.32pt x 578.16pt>
-File: images/cpg_states_plot.png Graphic file (type png)
-<use images/cpg_states_plot.png>
-Package pdftex.def Info: images/cpg_states_plot.png  used on input line 212.
-(pdftex.def)             Requested size: 312.40906pt x 156.20232pt.
-<images/cpg_states_plot_fu_1000.png, id=28, 1156.32pt x 578.16pt>
-File: images/cpg_states_plot_fu_1000.png Graphic file (type png)
-<use images/cpg_states_plot_fu_1000.png>
-Package pdftex.def Info: images/cpg_states_plot_fu_1000.png  used on input line
- 220.
-(pdftex.def)             Requested size: 312.40906pt x 156.20232pt.
-<images/cpg_states_plot_fu_100000.png, id=29, 1156.32pt x 578.16pt>
-File: images/cpg_states_plot_fu_100000.png Graphic file (type png)
-<use images/cpg_states_plot_fu_100000.png>
-Package pdftex.def Info: images/cpg_states_plot_fu_100000.png  used on input li
-ne 227.
-(pdftex.def)             Requested size: 312.40906pt x 156.20232pt.
-<images/cpg_states_plot_det.png, id=30, 1156.32pt x 578.16pt>
-File: images/cpg_states_plot_det.png Graphic file (type png)
-<use images/cpg_states_plot_det.png>
-Package pdftex.def Info: images/cpg_states_plot_det.png  used on input line 234
-.
-(pdftex.def)             Requested size: 312.40906pt x 156.20232pt.
-<images/cpg_states_plot_stoch.png, id=31, 1156.32pt x 578.16pt>
-File: images/cpg_states_plot_stoch.png Graphic file (type png)
-<use images/cpg_states_plot_stoch.png>
-Package pdftex.def Info: images/cpg_states_plot_stoch.png  used on input line 2
-41.
-(pdftex.def)             Requested size: 312.40906pt x 156.20232pt.
-<images/Cluster_det.png, id=32, 433.62pt x 289.08pt>
-File: images/Cluster_det.png Graphic file (type png)
-<use images/Cluster_det.png>
-Package pdftex.def Info: images/Cluster_det.png  used on input line 249.
-(pdftex.def)             Requested size: 312.40906pt x 208.28299pt.
-<images/Cluster_stoch.png, id=33, 433.62pt x 289.08pt>
-File: images/Cluster_stoch.png Graphic file (type png)
-<use images/Cluster_stoch.png>
-Package pdftex.def Info: images/Cluster_stoch.png  used on input line 255.
-(pdftex.def)             Requested size: 312.40906pt x 208.28299pt.
-<images/Autokor_stoch.png, id=34, 433.62pt x 289.08pt>
-File: images/Autokor_stoch.png Graphic file (type png)
-<use images/Autokor_stoch.png>
-Package pdftex.def Info: images/Autokor_stoch.png  used on input line 263.
-(pdftex.def)             Requested size: 312.40906pt x 208.28299pt.
-<images/Autokor_det.png, id=35, 433.62pt x 289.08pt>
-File: images/Autokor_det.png Graphic file (type png)
-<use images/Autokor_det.png>
-Package pdftex.def Info: images/Autokor_det.png  used on input line 270.
-(pdftex.def)             Requested size: 312.40906pt x 208.28299pt.
- [6] [7 <./images/cpg_states_plot.png> <./images/cpg_states_plot_fu_1000.png>] 
-[8 <./images/cpg_states_plot_fu_100000.png> <./images/cpg_states_plot_det.png>]
- [9 <./images/cpg_states_plot_stoch.png> <./images/Cluster_det.png>]
-[10 <./images/Cluster_stoch.png> <./images/Autokor_stoch.png>] (./SeminarV2.bbl
-) [11 <./images/Autokor_det.png>] (./SeminarV2.aux)
+
+Overfull \hbox (17.43265pt too wide) in paragraph at lines 166--176
+\OT1/cmr/m/n/10 Die Clus-ter-anal-yse er-gab hi-er-bei bei un-methylierten Stellen fol-gende Verteilung
+ []
+
+[4]
+Overfull \hbox (55.29375pt too wide) in paragraph at lines 184--187
+\OT1/cmr/m/n/10 Regelbasiert) k^^?onnen auch aus der Forschung gesch^^?atzte []Ubergangswahrscheinlichkeiten
+ []
+
+
+Overfull \hbox (12.84923pt too wide) in paragraph at lines 184--187
+\OT1/cmr/m/n/10 sowie die An-zahl der It-er-a-tio-nen und die An-zahl der Histone-Stellen eingestellt
+ []
+
+
+Overfull \hbox (0.43254pt too wide) in paragraph at lines 184--187
+\OT1/cmr/m/n/10 schiedene Szenar-ien zu simulieren und deren Auswirkun-gen auf die Histone-
+ []
+
+
+Overfull \hbox (4.64558pt too wide) in paragraph at lines 184--187
+\OT1/cmr/m/n/10 Zust^^?ande zu analysieren. Durch die []Ubergangswahrscheinlichkeiten k^^?onnten
+ []
+
+
+Overfull \hbox (0.15466pt too wide) in paragraph at lines 190--191
+\OT1/cmr/m/n/10 weiter erh^^?ohen in-dem das epi-genetis-che neu-ronale Netz er-weit-ert wird. 
+ []
+
+[5]
+Overfull \hbox (21.1549pt too wide) in paragraph at lines 197--203
+\OT1/cmr/m/n/10 bein-hal-ten, um die trans-gen-er-a-tionale Vererbung von epi-genetis-chen Markierun-
+ []
+
+
+Overfull \hbox (7.68257pt too wide) in paragraph at lines 197--203
+\OT1/cmr/m/n/10 dierung des Mod-ells sowie zur Sim-u-la-tion spez-i-fis-cher genetis-cher Erkrankun-
+ []
+
+
+LaTeX Warning: File `images/Histone_states_plot_stoch_det_short.png.png' not found on input line 208.
+
+
+! Package pdftex.def Error: File `images/Histone_states_plot_stoch_det_short.png.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.208 ...tone_states_plot_stoch_det_short.png.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `images/Histone_states_plot_fu_1000.png' not found on input line 216.
+
+
+! Package pdftex.def Error: File `images/Histone_states_plot_fu_1000.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.216 ...]{images/Histone_states_plot_fu_1000.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Citation `fu-2010' on page 6 undefined on input line 217.
+
+
+LaTeX Warning: Citation `fu-2010' on page 6 undefined on input line 217.
+
+
+Underfull \hbox (badness 1571) in paragraph at lines 217--217
+\OT1/cmr/m/n/10 lichkeiten f^^?ur de-novo-methylierung im Tochter-strang und Fehler-rate der
+ []
+
+
+LaTeX Warning: File `images/Histone_states_plot_fu_100000.png' not found on input line 223.
+
+
+! Package pdftex.def Error: File `images/Histone_states_plot_fu_100000.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.223 ...images/Histone_states_plot_fu_100000.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Citation `fu-2010' on page 6 undefined on input line 224.
+
+
+LaTeX Warning: Citation `fu-2010' on page 6 undefined on input line 224.
+
+
+LaTeX Warning: File `images/Histone_states_plot_det.png' not found on input line 230.
+
+
+! Package pdftex.def Error: File `images/Histone_states_plot_det.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.230 ...idth]{images/Histone_states_plot_det.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `images/Histone_states_plot_stoch.png' not found on input line 237.
+
+
+! Package pdftex.def Error: File `images/Histone_states_plot_stoch.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.237 ...th]{images/Histone_states_plot_stoch.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `images/Cluster_det.png' not found on input line 245.
+
+
+! Package pdftex.def Error: File `images/Cluster_det.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.245 ...th=0.9\textwidth]{images/Cluster_det.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `images/Cluster_stoch.png' not found on input line 251.
+
+
+! Package pdftex.def Error: File `images/Cluster_stoch.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.251 ...=0.9\textwidth]{images/Cluster_stoch.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `images/Autokor_stoch.png' not found on input line 259.
+
+
+! Package pdftex.def Error: File `images/Autokor_stoch.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.259 ...=0.9\textwidth]{images/Autokor_stoch.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `images/Autokor_det.png' not found on input line 266.
+
+
+! Package pdftex.def Error: File `images/Autokor_det.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.266 ...th=0.9\textwidth]{images/Autokor_det.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[6] [7] [8] [9] [10] [11] [12] [13] [14] [15] (./SeminarV2.bbl)
+
+! LaTeX Error: \begin{itemize} on input line 137 ended by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.278 \end{document}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+(./SeminarV2.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
- ) 
+
+
+LaTeX Warning: There were undefined references.
+
+ )
+(\end occurred inside a group at level 1)
+
+### semi simple group (level 1) entered at line 137 (\begingroup)
+### bottom level 
 Here is how much of TeX's memory you used:
- 2732 strings out of 474116
- 40935 string characters out of 5743681
- 1935187 words of memory out of 5000000
- 25079 multiletter control sequences out of 15000+600000
- 565141 words of font info for 62 fonts, out of 8000000 for 9000
+ 2936 strings out of 474116
+ 50405 string characters out of 5743681
+ 1936187 words of memory out of 5000000
+ 25283 multiletter control sequences out of 15000+600000
+ 565843 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,7n,65p,959b,248s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
-usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
-r/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/l
-ocal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/loca
-l/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/
-texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/te
-xlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/tex
-live/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on SeminarV2.pdf (11 pages, 2040065 bytes).
+ 57i,7n,65p,903b,372s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on SeminarV2.pdf (15 pages, 162181 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
- 58 compressed objects within 1 object stream
+ 104 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

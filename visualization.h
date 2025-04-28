@@ -1,4 +1,3 @@
-// /Users/Maxhi/Medizininformatik/Modellierung biologische Systeme/C Implementation Prohaska/visualization.h
 #pragma once
 #include "epigenetic_net.h"
 #include <iostream>

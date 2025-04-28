@@ -43,12 +43,13 @@ def plot_state_counts_and_equilibrium(csv_file):
         if eq_step is not None:
             plt.axvline(eq_step, color='red', linestyle='--', label=f'Equilibrium at step {eq_step}')
         plt.xlabel('Step')
-        plt.ylabel('Anzahl CpG pro Zustand')
-        plt.title('Ruhezustands-Stabilität (Equilibrium) bei CpG-Modell')
+        plt.ylabel('Anzahl Histone pro Zustand')
+        plt.title('Ruhezustands-Stabilität (Equilibrium) bei Histonmodell')
         plt.legend()
         plt.grid(alpha=0.3)
         plt.tight_layout()
         plt.show()
+        plt.savefig("Markov_eq.png", dpi=300)
 
         print(f'Equilibrium reached at step: {eq_step}')
     except FileNotFoundError:
@@ -57,4 +58,4 @@ def plot_state_counts_and_equilibrium(csv_file):
         print(f"Error while plotting state counts and equilibrium: {e}")
 
 if __name__ == "__main__":
-    plot_state_counts_and_equilibrium("cpg_states_stoch_det.csv")
+    plot_state_counts_and_equilibrium("Histone_Markov_1000.csv")

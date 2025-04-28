@@ -1,14 +1,13 @@
-// /Users/Maxhi/Medizininformatik/Modellierung biologische Systeme/C Implementation Prohaska/visualization.cpp
 #include "visualization.h"
 #include <map>
 
 std::string NetVisualizer::stateToString(ModificationState state) {
     switch(state) {
-        case ModificationState::UNMETHYLATED: return "U";
+        case ModificationState::UNMODIFIED: return "U";
         case ModificationState::METHYLATED: return "M";
-        case ModificationState::HYDROXYMETHYLATED: return "H";
-        case ModificationState::FORMYLATED: return "F";
-        case ModificationState::CARBOXYLATED: return "C";
+        case ModificationState::PHOSPHORYLATED: return "P";
+        case ModificationState::ACETYLATED: return "A";
+        case ModificationState::UBIQUITYLATED: return "Ub";
         default: return "?";
     }
 }
@@ -32,9 +31,9 @@ void NetVisualizer::displayStateDistribution(const ConditionalNet& net) {
     }
     
     std::cout << "State Distribution:\n";
-    std::cout << "Unmethylated: " << distribution[ModificationState::UNMETHYLATED] << "\n";
+    std::cout << "Unmodified: " << distribution[ModificationState::UNMODIFIED] << "\n";
     std::cout << "Methylated: " << distribution[ModificationState::METHYLATED] << "\n";
-    std::cout << "Hydroxymethylated: " << distribution[ModificationState::HYDROXYMETHYLATED] << "\n";
-    std::cout << "Formylated: " << distribution[ModificationState::FORMYLATED] << "\n";
-    std::cout << "Carboxylated: " << distribution[ModificationState::CARBOXYLATED] << "\n";
+    std::cout << "Phosphorylated: " << distribution[ModificationState::PHOSPHORYLATED] << "\n";
+    std::cout << "Acetylated: " << distribution[ModificationState::ACETYLATED] << "\n";
+    std::cout << "Ubiquitylation: " << distribution[ModificationState::UBIQUITYLATED] << "\n";
 }

@@ -5,11 +5,11 @@
 #include <memory>
 
 enum class ModificationState {
-    UNMETHYLATED,
+    UNMODIFIED,
     METHYLATED,
-    HYDROXYMETHYLATED,
-    FORMYLATED,
-    CARBOXYLATED
+    PHOSPHORYLATED,
+    ACETYLATED,
+    UBIQUITYLATED
 };
 
 // Class representing an epigenetic site
@@ -20,7 +20,7 @@ private:
     
 public:
     EpigeneticSite(); // Default-Konstruktor
-    EpigeneticSite(const std::string& pos, ModificationState initialState = ModificationState::UNMETHYLATED);
+    EpigeneticSite(const std::string& pos, ModificationState initialState = ModificationState::UNMODIFIED);
     void setState(ModificationState newState);
     ModificationState getState() const;
     std::string getPosition() const;
@@ -32,11 +32,11 @@ private:
     std::map<std::string, std::map<std::string, double>> transitionProbabilities;
     
 public:
-    void addSite(const std::string& position, ModificationState initialState = ModificationState::UNMETHYLATED);
+    void addSite(const std::string& position, ModificationState initialState = ModificationState::UNMODIFIED);
     void addTransition(const std::string& from, const std::string& to, double probability);
     void simulateStep();
     std::map<std::string, EpigeneticSite>& getSites();
     void exportStateToCSV(const std::string& filename, int step, bool header = false);
     // Wendet das deterministische Prohaska-Regelwerk an
-    void applyDeterministicProhaskaRules();
+    void applyProhaskaRules();
 };
