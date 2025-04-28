@@ -114,24 +114,40 @@ Das Modell beschreibt die Histonmodifikation als ein deterministisches System.
 Es definiert jeden Nukleosom‑Knoten durch zwei Flags für Acetylation (H3K27ac) und Methylation (H3K9me3) sowie einen Aktivitätsindikator. In jedem Zeitschritt werden alle Nukleosomen gleichzeitig nach folgenden Regeln aktualisiert: 
 Ein Nukleosom erwirbt Acetylation, falls sein linker Nachbar bereits acetylierte Kennzeichnungen besitzt, andernfalls erhält es Methylation, falls sein rechter Nachbar methy­liert ist. Diese strikt logischen Booleschen Operationen werden in der Methode \texttt{applyDeterministicProhaskaRules()} umgesetzt.
 Diese Zustände entscheiden nach heutiger Ansicht darüber, ob und wie die DNA an dieser Stelle für die Transkription verwendet werden kann.
-Die vormals simplifizierte Ansicht, dass die Zustände des Chromatins binär seien, wurde widerlegt. Filon et al. erkannten durch Principal Component Analysis fünf verschiedene 
+Die simplere Ansicht, dass die Zustände des Chromatins binär seien, wurde widerlegt. Filon et al. erkannten durch Principal Component Analysis fünf verschiedene 
 Typen von Chromatin. \cite{filon-2010}
 
+\section{Prohaska-Modell, (deterministischer Ansatz)}
+Das auf Prohaska et al. basierende Modell zeigt einen Ansatz, bei dem durch das Festlegen
+von Regeln eine Vorhersage über die zukünftige Konstellation der Histonmodifikationen getroffen wird.
+Dieser regelbasierte Ansatz hat den Vorteil, dass hierdurch Erkenntnisse aus der realen Welt in das Modell einfließen können.
+Die Schwäche dieses Modells ist es jedoch, dass dadurch oft ein Endzustand erreicht wird, bei dem das Modell sich nicht mehr ändert.
+Die verwendeten Regeln sind:
+Acetylations-Writer (Aktivierungs-Regel):
+Diese Regel modelliert, wie ein bereits acetylierter Nachbar (H3K27ac) ein Nukleosom “aktiviert” und selbst acetylieren lässt. Prohaska et al. sprechen hier von einem positiven Rückkopplungsschritt, der aktives Chromatin ausbreitet.
+Methylations-Writer (Silencing-Regel):
+Entspricht der Rekrutierung eines Methyltransferase-Komplexes (z. B. DNMT1), der einen Nukleosom re-methyliert und dadurch “stummschaltet”. Dies ist in ihrem Framework der Repressive Feedbackschritt, der in Konfliktsituationen immer Vorrang vor Acetylation hat.
+Zudem wurde zufallsbasiert ein Eraser in das Modell aufgenommen der mit einer wählbahren Wahrscheinlichkeit einzelne Modifikationen löscht.
+Da das Modell relativ schnell in einen stabilen Zustand konvergierte, wurde es mit einem Markovmodell erweitert, das zusätzliche zufällige Übergangswahrscheinlichkeiten definiert. \ref{fig:P_1000}
 
 \subsection{Markov-Modell (stochastischer Ansatz)}
-Zur Modellierung der DNA-Histonmodifikation wurde eine C++ Implementierung entwickelt, die auf dem Modell von Prohaska et al. basiert. Das Modell simuliert die dynamischen Ver\"{a}nderungen der epigenetischen Zust\"{a}nde an Histone-Stellen \"{u}ber die Zeit. Jede Histone-Stelle kann einen von f\"{u}nf m\"{o}glichen Zust\"{a}nden annehmen:
-Das stochastische Modell basiert auf einem Markov-Prozess, der Übergänge zwischen fünf möglichen Zuständen an jeder Histone-Stelle beschreibt. Diese Übergänge werden mit Wahrscheinlichkeiten gesteuert, die auf empirischen Daten beruhen (z.B. Fu et al., 2010). Jeder Zeitschritt besteht darin, für jede Histone-Stelle den nächsten Zustand basierend auf den definierten Übergangswahrscheinlichkeiten zufällig zu wählen. Zusätzlich zur zufälligen Auswahl wird im Modell eine deterministische Komponente integriert, indem die Prohaska-Regeln vor jedem stochastischen Schritt angewendet werden. Dadurch entsteht ein hybrider Ansatz, der sowohl deterministische Nachbarschaftsregeln als auch stochastische Veränderungen abbildet und somit biologisch realistischer sein könnte.
-
 Die \"{U}berg\"{a}nge zwischen diesen Zust\"{a}nden 
 werden durch ein stochastisches Modell gesteuert, das die 
 biologischen Prozesse der Modifikation und Demodifikation nachbildet. 
 Die Implementierung verwendet einen Markov-Prozess, bei dem die 
-\"{u}bergangswahrscheinlichkeiten von den aktuellen Zust\"{a}nden benachbarter Histone-Stellen abh\"{a}ngen.
+\"{U}bergangswahrscheinlichkeiten von den aktuellen Zust\"{a}nden benachbarter Histonstellen abh\"{a}ngen.
+Jeder Zeitschritt besteht darin, für jede Histonstelle den nächsten Zustand basierend auf den definierten Übergangswahrscheinlichkeiten zufällig zu wählen. \ref{fig:M_1000}
+
+\subsection{Kombiniertes Modell}
+Zusätzlich zur zufälligen Auswahl wird im Modell eine deterministische Komponente integriert, indem die Prohaska-Regeln vor jedem stochastischen Schritt angewendet werden. Dadurch entsteht ein hybrider Ansatz, der sowohl deterministische Nachbarschaftsregeln als auch stochastische Veränderungen abbildet und somit biologisch realistischer sein könnte.
+\ref{fig:PM_1000}
+In der Analyse der Größe der Cluster sowie der Autokorrelation wird deutlich, dass der Unmethylierte Zustand über die Zeit abnimmt, jedoch auch durch zufällige Ereignisse wieder ansteigen kann.
+Das bietet interessante Möglichkeiten für die Analyse der Auswirkung von Risikofaktoren, die über weitere Übergangswahrscheinlichkeiten modelliert werden könnten.\ref{fig:PM_1000_A}\ref{fig:PM_1000_C}
 
 \subsection{Modellierung}
 Die Simulation wird in Zeitschritten von 1 Zeiteinheit durchgef\"{u}hrt, wobei die \"{U}bergangswahrscheinlichkeiten f\"{u}r jeden Zustand und jede Nachbarschaftskonfiguration 
 vor der Simulation basierend auf aktuellem Kenntnisstand festgelegt wird.
-Die Simulation wird f\"{u}r eine bestimmte Anzahl von Iterationen durchgef\"{u}hrt, um die zeitliche Entwicklung der Histone-Stellen zu beobachten.
+Die Simulation wird f\"{u}r eine bestimmte Anzahl von Iterationen durchgef\"{u}hrt, um die zeitliche Entwicklung der Histonestellen zu beobachten.
 Die Histone (Sites, Orte) wurden auf 10 gesetzt, während die chemischen Histonmodifikationen auf 5 gesetzt wurden (States, Zustände).
 Die folgenden Zust\"{a}nde wurden definiert:
 \begin{itemize}
@@ -140,22 +156,23 @@ Die folgenden Zust\"{a}nde wurden definiert:
   \item \textbf{P}hosphoryliert (P): Histon ist phosphoryliert.
   \item \textbf{A}cetylisiert (A): Histon ist acetylisiert.
   \item \textbf{U}biquitiliert (U): Histon ist ubiquitiliert.
-  \item \textbf{Erweiterungen können in epigenetic_net.cpp hinzugefügt werden.} Diese Zustände müssen ebenfalls mit Kürzel in allen anderen Skripten ergänzt werden.
+\end{itemize}
 
 \textbf{Technische Details:}
-Die \texttt{HistoneSite}-Klasse speichert den aktuellen Zustand als Enum und stellt Methoden zum Setzen und Abfragen des Zustands bereit.
-Die \texttt{Genome}-Klasse verwaltet eine Liste von \texttt{HistoneSite}-Objekten und erm\"{o}glicht den Zugriff auf benachbarte Stellen, was f\"{u}r die konditionalen \"{U}berg\"{a}nge notwendig ist.
-In der \texttt{Simulator}-Klasse wird die Simulationslogik implementiert. Sie verwendet einen Zufallszahlengenerator, um stochastische \"{U}berg\"{a}nge gem\"{a}\ss den spezifizierten Wahrscheinlichkeiten durchzuf\"{u}hren. Die \"{U}bergangswahrscheinlichkeiten sind in einer Matrix abgelegt, die f\"{u}r jeden Zustand und jede Nachbarschaftskonfiguration die jeweilige Wahrscheinlichkeit enth\"{a}lt.
-Die Ergebnisse werden nach jedem Zeitschritt in eine CSV-Datei geschrieben. Diese Datei enth\"{a}lt sowohl den Zustand jeder Histone-Stelle zu jedem Zeitpunkt als auch aggregierte Statistiken (z.B. H\"{a}ufigkeit der Zust\"{a}nde).
+Die \texttt{EpigeneticSite}-Klasse speichert den aktuellen Zustand (\texttt{ModificationState}) als Enum und stellt Methoden zum Setzen und Abfragen des Zustands bereit.
+Das \texttt{Conditional Model} verwaltet eine Liste von \texttt{HistoneSite}-Objekten und erm\"{o}glicht den Zugriff auf benachbarte Stellen, was f\"{u}r die konditionalen \"{U}berg\"{a}nge notwendig ist.
+In der \texttt{Main}-Klasse wird die Simulationslogik implementiert. Sie verwendet einen Zufallszahlengenerator, um stochastische \"{U}berg\"{a}nge gem\"{a}\ss den spezifizierten Wahrscheinlichkeiten durchzuf\"{u}hren. Die \"{U}bergangswahrscheinlichkeiten sind in einer Matrix abgelegt, die f\"{u}r jeden Zustand und jede Nachbarschaftskonfiguration die jeweilige Wahrscheinlichkeit enth\"{a}lt.
+Die Ergebnisse werden nach jedem Zeitschritt in eine CSV-Datei geschrieben. Diese Datei enth\"{a}lt den Zustand jeder Histonstelle zu jedem Zeitpunkt.
 F\"{u}r die Visualisierung wird ein separates Python-Skript verwendet, das die CSV-Datei einliest und sowohl eine Heatmap als auch eine Zeitreihe der Zustandsverteilungen erzeugt.
+Darüberhinaus kann die Autokorrelation sowie die Clusterverteilung visualisiert werden.
 
 \section{Ergebnisse}
 Die Simulation erm\"{o}glicht es, die zeitliche Entwicklung der epigenetischen Zust\"{a}nde 
-\"{u}ber mehrere Generationen zu beobachten. Abbildung \ref{fig:Histone_states} zeigt die Visualisierung der ersten Version einer Simulation.
-Die Visualisierung besteht aus zwei Teilen: Die Heatmap wurde verwendet, um den Zustand jeder einzelnen Histone-Stelle \"{u}ber die Zeit darzustellen.
+\"{u}ber mehrere Generationen zu beobachten. Abbildung \ref{fig:PM_1000} zeigt die Visualisierung der ersten Version einer Simulation.
+Die Visualisierung besteht aus zwei Teilen: Die Heatmap wurde verwendet, um den Zustand jeder einzelnen Histonstelle \"{u}ber die Zeit darzustellen.
 Das Liniendiagramm zeigt die H\"{a}ufigkeit jedes Zustands \"{u}ber die Zeit.
 
-\section{Test des stochastischen Modells mit realistischen Daten}
+\section{Anwendung des stochastischen Modells mit realistischen Daten}
 Im n\"{a}chsten Schritt wurde eine Visualisierung mit \"{U}bergangswahrscheinlichkeiten aus reellen Daten durchgef\"{u}hrt. Die f\"{u}r diese Simulation gew\"{a}hlten \"{U}bergangswahrscheinlichkeiten basieren auf quantitativen Sch\"{a}tzungen aus der Literatur.  
 Hier wurden die Ergebnisse von Fu et al. (2010) genutzt, die mittels eines Bayes'schen Modells an humanen FMR1-Daten folgende Raten ermittelt haben \cite{fu-2010}:
 \begin{itemize}
@@ -164,26 +181,21 @@ Hier wurden die Ergebnisse von Fu et al. (2010) genutzt, die mittels eines Baye
   \item \textbf{De-novo-Methylierungsrate (Tochterstrang)}: Median 0{,}07 (80 \% CI: 0,04-0,11)  
 \end{itemize}
 Es wurde für die Wahrscheinlichkeit einer Methylierung der Wert des Tochterstrangs,
-also 0,07, verwendet. Die Wahrscheinlichkeit der De-novo-Methylierung wurde auf 0,1 gesetzt, um die Simulation zu beschleunigen. Die Ergebnisse der Simulation mit den \"{U}bergangswahrscheinlichkeiten nach Fu et al. (2010) sind in Abbildung \ref{fig:Histone_states_1000} und \ref{fig:Histone_states_fu_100000} dargestellt.
-Hier ist zu beachten, dass diese Ergebnisse zur besseren Visualisierung einige Übergangswahrscheinlichkeiten sowie einige Zustände gar nicht abbilden.
+also 0,07, verwendet. Die Wahrscheinlichkeit der De-novo-Methylierung wurde auf 0,24 gesetzt. Die Ergebnisse der Simulation mit den \"{U}bergangswahrscheinlichkeiten nach Fu et al. (2010) sind in Abbildung \ref{fig:Fu_1000} dargestellt.
 Die Ergebnisse zeigen deutliche Muster in der r\"{a}umlichen und zeitlichen 
-Verteilung der epigenetischen Zust\"{a}nde. Insbesondere kann man beobachten, wie sich die Methylierungszust\"{a}nde in bestimmten Regionen zusammenh\"{a}ufen und wie sich diese Cluster \"{u}ber die Zeit entwickeln.
-Als Erweiterung wurde nun das stochastische Modell mit dem regulatorischen System nach Prohaska et al. erweitert.
-Die Simulationsergebnisse zeigen deutliche Unterschiede zwischen den beiden Modellierungsansätzen. Im deterministischen Modell nach Prohaska bilden sich schnell stabile Muster heraus. Insbesondere die Clusterstatistik zeigte bei unmethylierten Stellen (Zustand U) eine auffällige Häufigkeit von etwa 0,5 bei Clustergrößen von 2 und 6.
-Im Gegensatz dazu präsentierte das stochastische Modell ein dynamischeres und weniger stabiles Verhalten. Die Clusteranalyse ergab hierbei bei unmethylierten Stellen folgende Verteilung der Häufigkeiten: etwa 0,67 für Clustergröße 1, 0,23 für Clustergröße 2, 0,06 für Größe 3 und etwa 0,01 für Größe 4.
-Das erklärt ebenfalls das unterschiedliche Verhalten bei der Autokorrelation. Hier weist das deterministische Modell logischerweise 0 auf, da dieses Modell schnell stabile Zustände erreicht. Das Stochastische Modell erreicht je nach Konfiguration unterschiedlich schnell stabile Zustände.
-Die beigefügten Abbildungen illustrieren den Verlauf der Histonzustände im deterministischen (Abb. \ref{fig:Histone_states_det}) und im stochastischen Modell (Abb. \ref{fig:Histone_states_stoch}).
+Verteilung der epigenetischen Zust\"{a}nde. Insbesondere kann man beobachten, wie sich die Methylierungszust\"{a}nde in bestimmten Regionen zusammenh\"{a}ufen und wie sich die Modifikationen mit den gewählten Wahrscheinlichkeiten \"{u}ber die Zeit entwickeln.
 
 \section{Diskussion}
-Im Vergleich mit der deterministischen Implementierung von Prohaska et al. zeigt das stochastische Modell eine größere Variabilität in der zeitlichen Entwicklung der Histone-Zustände. Dies könnte darauf hindeuten, dass das stochastische Modell besser geeignet ist, um die biologischen Prozesse der Histonmodifikation und deren Einfluss auf die Genexpression zu erfassen. Die Ergebnisse der Simulationen zeigen, dass das stochastische Modell in der Lage ist, komplexe Muster zu erzeugen, die in der Natur beobachtet werden können.
+Im Vergleich mit der deterministischen Implementierung von Prohaska et al. zeigt das stochastische Modell eine größere Variabilität in der zeitlichen Entwicklung der Histonzustände. Dies könnte darauf hindeuten, dass das stochastische Modell besser geeignet ist, um die biologischen Prozesse der Histonmodifikation und deren Einfluss auf die Genexpression zu erfassen. Die Ergebnisse der Simulationen zeigen, dass das stochastische Modell in der Lage ist, komplexe Muster zu erzeugen, die in der Natur beobachtet werden können.
 Das deterministische Modell zeigt eine größere Stabilität, die sich in der Bildung stabiler Cluster widerspiegelt. Diese Stabilität könnte in biologischen Systemen von Bedeutung sein, da hier das Ziel eine robuste Regulation der Genexpression wäre.
 Die Kombination des stochastischen und des deterministischen Modells weist als Erweiterung den realistischsten Verlauf auf, und nutzt die Vorteile beider Ansätze. 
 Das kann als Äquivalent der biologisch gewollten Anpassung des regulatorischen Systems und der Einflüsse durch die Umwelt betrachtet werden.
 
 \subsection{Weitere Nutzung}
-Im Modul main.cpp kann das Modell vielfältig parametrisiert werden. Neben der Auswahl der verschiedenen Methoden (Markov sowie Prohaska-Regelbasiert) können auch aus der Forschung geschätzte Übergangswahrscheinlichkeiten sowie die Anzahl der Iterationen und die Anzahl der Histone-Stellen eingestellt werden.
-Das ermöglicht eine vielfältige Nutzung des Modells um verschiedene Szenarien zu simulieren und deren Auswirkungen auf die Histone-Zustände zu analysieren.
+Im Modul main.cpp kann das Modell vielfältig parametrisiert werden. Neben der Auswahl der verschiedenen Methoden (Markov sowie Prohaska-Regelbasiert) können auch aus der Forschung geschätzte Übergangswahrscheinlichkeiten sowie die Anzahl der Iterationen und die Anzahl der Histonstellen eingestellt werden.
+Das ermöglicht eine vielfältige Nutzung des Modells um verschiedene Szenarien zu simulieren und deren Auswirkungen auf die Histonzustände zu analysieren.
 Durch die Übergangswahrscheinlichkeiten könnten verschiedene Risikofaktoren, die das regulatorische System beeinflussen könnten, mit der regelbasierten Simulation kombiniert werden.
+
 \subsection{Limitationen und Ausblick}
 Obwohl das Modell viele Aspekte der epigenetischen Regulation abbildet, gibt es Einschr\"{a}nkungen:
 \begin{itemize}
@@ -203,69 +215,54 @@ Weiterhin können mit dieser Implementierung Erwartungswerte basierend auf verga
 
 \section{Abbildungen}
 
+
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.9\textwidth]{images/Histone_states_plot_stoch_det_short.png.png}
-  \caption{Visualisierung der Histone-Zust\"{a}nde \"{u}ber die Zeit. Verwendetes Modell: Stochastisch mit allen Übergangswahrscheinlichkeiten bei 0,5 und Prohaska Implementierung Links: Heatmap der Zust\"{a}nde an verschiedenen 
-  Histonstellen \"{u}ber die Zeit (U: grau, M: blau, P: gr\"{u}n, A: rot, Ub: gelb). Rechts: Anzahl der Histonstellen, kumuliert.}
-  \label{fig:Histone_states}
+  \includegraphics[width=0.9\textwidth]{images/Histone_Fu_1000.png}
+  \caption{Visualisierung des stochastischen Modells mit den Wahrscheinlichkeiten für de-novo-methylierung im Tochterstrang und Fehlerrate der Methylierungserhaltung aus Fu et al. (2010) und 1000 Iterationen. \cite{fu-2010}}
+  \label{fig:Fu_1000}
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.9\textwidth]{images/Histone_states_plot_fu_1000.png}
-  \caption{Visualisierung des reinen stochastischen Modells mit den Wahrscheinlichkeiten für de-novo-methylierung im Tochterstrang und Fehlerrate der Methylierungserhaltung aus Fu et al. (2010) und 1000 Iterationen. \cite{fu-2010}}
-  \label{fig:Histone_states_1000}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.9\textwidth]{images/Histone_states_plot_fu_100000.png}
-  \caption{Visualisierung mit den Wahrscheinlichkeiten für de-novo-methylierung im Tochterstrang und Fehlerrate der Methylierungserhaltung aus Fu et al. (2010) und 100000 Iterationen. \cite{fu-2010}}
-  \label{fig:Histone_states_fu_100000}
-\end{figure}
+  \includegraphics[width=0.9\textwidth]{images/Fu_eq.png}
+  \caption{Equilibrium bei Fu et al.}
+  \label{fig:Fu_eq}
+  \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.9\textwidth]{images/Histone_states_plot_det.png}
+\includegraphics[width=0.9\textwidth]{images/Histone_Prohaska_1000.png}
 \caption{Visualisierung des deterministischen Modells: links Heatmap der Zustände über die Zeit, rechts Häufigkeiten der Zustände.}
-\label{fig:Histone_states_det}
+\label{fig:P_1000}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.9\textwidth]{images/Histone_states_plot_stoch.png}
+\includegraphics[width=0.9\textwidth]{images/Histone_Markov_1000.png}
 \caption{Visualisierung des stochastischen Modells: links Heatmap der Zustände über die Zeit, rechts Häufigkeiten der Zustände.}
-\label{fig:Histone_states_stoch}
+\label{fig:M_1000}
 \end{figure}
 
-
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.9\textwidth]{images/Cluster_det.png}
-  \caption{Clustergröße im deterministischen Modell}
-  \label{fig:Histone_states_cluster_det}
-  \end{figure}
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.9\textwidth]{images/Cluster_stoch.png}
-  \caption{Clustergröße im stochastischen Modell}
-  \label{fig:Histone_states_cluster_stoch}
-  \end{figure}
-
+  \includegraphics[width=0.9\textwidth]{images/Histone_Prohaska_and_Markov_1000.png}
+  \caption{Visualisierung des gemischten Modells: links Heatmap der Zustände über die Zeit, rechts Häufigkeiten der Zustände.}
+  \label{fig:PM_1000}
+\end{figure}
 
 \begin{figure} [htbp]
   \centering
-  \includegraphics[width=0.9\textwidth]{images/Autokor_stoch.png}
-  \caption{Autokorrelation im stochastischen Modell}
-  \label{fig:Histone_states_auto_stoch}
+  \includegraphics[width=0.9\textwidth]{images/Histone_Prohaska_and_Markov_1000_cluster.png}
+  \caption{Clustergröße von Unmethylierten Zuständen im Prohaska und Markov Modell}
+  \label{fig:PM_1000_C}
   \end{figure}
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.9\textwidth]{images/Autokor_det.png}
+  \includegraphics[width=0.9\textwidth]{images/Histone_Prohaska_and_Markov_1000_autocor.png}
   \caption{Autokorrelation im deterministischen Modell}
-  \label{fig:Histone_states_auto_det}
+  \label{fig:PM_1000_A}
 \end{figure}
 
 
