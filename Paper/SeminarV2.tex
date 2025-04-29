@@ -143,7 +143,7 @@ Jeder Zeitschritt besteht darin, für jede Histonstelle den nächsten Zustand ba
 \subsection{Kombiniertes Modell}
 Zusätzlich zur zufälligen Auswahl wird im Modell eine deterministische Komponente integriert, indem die Prohaska-Regeln vor jedem stochastischen Schritt angewendet werden. Dadurch entsteht ein hybrider Ansatz, der sowohl deterministische Nachbarschaftsregeln als auch stochastische Veränderungen abbildet und somit biologisch realistischer sein könnte.
 \ref{fig:PM_1000}
-In der Analyse der Größe der Cluster sowie der Autokorrelation wird deutlich, dass der Unmethylierte Zustand über die Zeit abnimmt, jedoch auch durch zufällige Ereignisse wieder ansteigen kann.
+In der Analyse der Größe der Cluster sowie der Autokorrelation wird deutlich, dass der Unmethylierte Zustand über die Zeit abnimmt, jedoch auch durch zufällige Ereignisse wieder ansteigen kann. Dieser Effekt wird verstärkt wenn das Markov Model höhere Übergangswahrscheinlichkeiten als Startwerte bekommt und verhindert zu stabile Zustände.
 Das bietet interessante Möglichkeiten für die Analyse der Auswirkung von Risikofaktoren, die über weitere Übergangswahrscheinlichkeiten modelliert werden könnten. (Abbildung: \ref{fig:PM_1000_A}, Abbildung: \ref{fig:PM_1000_C})
 
 \subsection{Modellierung}
@@ -188,13 +188,13 @@ Die Ergebnisse zeigen deutliche Muster in der r\"{a}umlichen und zeitlichen
 Verteilung der epigenetischen Zust\"{a}nde. Insbesondere kann man beobachten, wie sich die Methylierungszust\"{a}nde in bestimmten Regionen zusammenh\"{a}ufen und wie sich die Modifikationen mit den gewählten Wahrscheinlichkeiten \"{u}ber die Zeit entwickeln.
 
 \section{Diskussion}
-Im Vergleich mit der deterministischen Implementierung von Prohaska et al. zeigt das stochastische Modell eine größere Variabilität in der zeitlichen Entwicklung der Histonzustände. Dies könnte darauf hindeuten, dass das stochastische Modell besser geeignet ist, um die biologischen Prozesse der Histonmodifikation und deren Einfluss auf die Genexpression zu erfassen. Die Ergebnisse der Simulationen zeigen, dass das stochastische Modell in der Lage ist, komplexe Muster zu erzeugen, die in der Natur beobachtet werden können.
+Im Vergleich mit der deterministischen Implementierung von Prohaska et al. zeigt das stochastische Modell eine größere Variabilität in der zeitlichen Entwicklung der Histonzustände. Dies könnte darauf hindeuten, dass das stochastische Modell besser geeignet ist, um die biologischen Prozesse der Histonmodifikation durch Umwelteinflüsse und deren Einfluss auf die Genexpression zu erfassen. Die Ergebnisse der Simulationen mit den deterministischen Regeln von Prohaska et al. zeigen, dass das stochastische Modell in der Lage ist, komplexe Muster zu erzeugen, die in der Natur beobachtet werden können.
 Das deterministische Modell zeigt eine größere Stabilität, die sich in der Bildung stabiler Cluster widerspiegelt. Diese Stabilität könnte in biologischen Systemen von Bedeutung sein, da hier das Ziel eine robuste Regulation der Genexpression wäre.
 Die Kombination des stochastischen und des deterministischen Modells weist als Erweiterung den realistischsten Verlauf auf, und nutzt die Vorteile beider Ansätze. 
 Das kann als Äquivalent der biologisch gewollten Anpassung des regulatorischen Systems und der Einflüsse durch die Umwelt betrachtet werden.
-
+Wie in der Validierung der Daten mit den Forschungsergebnissen aus Fu et al. kann durch die Simulation ein Erwartungswert für die erwatete Häufigkeit von Modifikationen errechnet werden. Über das stochastische Modell können zusätzlich Umweltfaktoren simuliert werden.
 \subsection{Weitere Nutzung}
-Im Modul main.cpp kann das Modell vielfältig parametrisiert werden. Neben der Auswahl der verschiedenen Methoden (Markov sowie Prohaska-Regelbasiert) können auch aus der Forschung geschätzte Übergangswahrscheinlichkeiten sowie die Anzahl der Iterationen und die Anzahl der Histonstellen eingestellt werden.
+Im Modul main.cpp kann das Modell vielfältig parametrisiert werden sowie Simulationen mit und ohne die Regeln von Prohaska et al. und dem Markov Modell durchgeführt werden. Die Übergangswahrscheinlichkeiten können nach Forschungsergebnissen gesetzt werden um Umweltfaktoren zu simulieren. Neben der Auswahl der verschiedenen Methoden (Markov sowie Prohaska-Regelbasiert) können auch aus der Forschung geschätzte Übergangswahrscheinlichkeiten sowie die Anzahl der Iterationen und die Anzahl der Histonstellen eingestellt werden.
 Das ermöglicht eine vielfältige Nutzung des Modells um verschiedene Szenarien zu simulieren und deren Auswirkungen auf die Histonzustände zu analysieren.
 Durch die Übergangswahrscheinlichkeiten könnten verschiedene Risikofaktoren, die das regulatorische System beeinflussen könnten, mit der regelbasierten Simulation kombiniert werden.
 
