@@ -2,7 +2,7 @@
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath,array}
-
+\usepackage{hyperref}
 %***********************************************************************
 % !!!! IMPORTANT NOTICE ON TEXT MARGINS !!!!!
 %***********************************************************************
@@ -53,7 +53,7 @@
 Universit\"{a}t Leipzig, Institut f\"{u}r medizinische Informatik, Statistik und Epidemiologie\\
 Neues Augusteum, Augustuspl. 10, 04109 Leipzig - Germany
 }
-
+See the repository: \href{https://github.com/maxhild/epigen}{maxhild/epigen}.
 
 %***********************************************************************
 % END OF AUTHORS INFORMATION AREA
@@ -128,7 +128,7 @@ Diese Regel modelliert, wie ein bereits acetylierter Nachbar (H3K27ac) ein Nukle
 Methylations-Writer (Silencing-Regel):
 Entspricht der Rekrutierung eines Methyltransferase-Komplexes (z. B. DNMT1), der einen Nukleosom re-methyliert und dadurch “stummschaltet”. Dies ist in ihrem Framework der Repressive Feedbackschritt, der in Konfliktsituationen immer Vorrang vor Acetylation hat.
 Zudem wurde zufallsbasiert ein Eraser in das Modell aufgenommen der mit einer wählbahren Wahrscheinlichkeit einzelne Modifikationen löscht.
-Da das Modell relativ schnell in einen stabilen Zustand konvergierte, wurde es mit einem Markovmodell erweitert, das zusätzliche zufällige Übergangswahrscheinlichkeiten definiert. \ref{fig:P_1000}
+Da das Modell relativ schnell in einen stabilen Zustand konvergierte, wurde es mit einem Markovmodell erweitert, das zusätzliche zufällige Übergangswahrscheinlichkeiten definiert. (Abbildung: \ref{fig:P_1000})
 
 \subsection{Markov-Modell (stochastischer Ansatz)}
 Die \"{U}berg\"{a}nge zwischen diesen Zust\"{a}nden 
@@ -136,13 +136,13 @@ werden durch ein stochastisches Modell gesteuert, das die
 biologischen Prozesse der Modifikation und Demodifikation nachbildet. 
 Die Implementierung verwendet einen Markov-Prozess, bei dem die 
 \"{U}bergangswahrscheinlichkeiten von den aktuellen Zust\"{a}nden benachbarter Histonstellen abh\"{a}ngen.
-Jeder Zeitschritt besteht darin, für jede Histonstelle den nächsten Zustand basierend auf den definierten Übergangswahrscheinlichkeiten zufällig zu wählen. \ref{fig:M_1000}
+Jeder Zeitschritt besteht darin, für jede Histonstelle den nächsten Zustand basierend auf den definierten Übergangswahrscheinlichkeiten zufällig zu wählen. (Abbildung: \ref{fig:M_1000})
 
 \subsection{Kombiniertes Modell}
 Zusätzlich zur zufälligen Auswahl wird im Modell eine deterministische Komponente integriert, indem die Prohaska-Regeln vor jedem stochastischen Schritt angewendet werden. Dadurch entsteht ein hybrider Ansatz, der sowohl deterministische Nachbarschaftsregeln als auch stochastische Veränderungen abbildet und somit biologisch realistischer sein könnte.
 \ref{fig:PM_1000}
 In der Analyse der Größe der Cluster sowie der Autokorrelation wird deutlich, dass der Unmethylierte Zustand über die Zeit abnimmt, jedoch auch durch zufällige Ereignisse wieder ansteigen kann.
-Das bietet interessante Möglichkeiten für die Analyse der Auswirkung von Risikofaktoren, die über weitere Übergangswahrscheinlichkeiten modelliert werden könnten.\ref{fig:PM_1000_A}\ref{fig:PM_1000_C}
+Das bietet interessante Möglichkeiten für die Analyse der Auswirkung von Risikofaktoren, die über weitere Übergangswahrscheinlichkeiten modelliert werden könnten. (Abbildung: \ref{fig:PM_1000_A}, Abbildung: \ref{fig:PM_1000_C})
 
 \subsection{Modellierung}
 Die Simulation wird in Zeitschritten von 1 Zeiteinheit durchgef\"{u}hrt, wobei die \"{U}bergangswahrscheinlichkeiten f\"{u}r jeden Zustand und jede Nachbarschaftskonfiguration 
@@ -202,7 +202,7 @@ Obwohl das Modell viele Aspekte der epigenetischen Regulation abbildet, gibt es 
     \item Die \"{U}bergangswahrscheinlichkeiten sind aktuell statisch und basieren auf Literaturwerten oder Annahmen. Eine Kalibrierung mit experimentellen Daten sowie ein Training dieser k\"{o}nnte die Aussagekraft weiter erh\"{o}hen indem das epigenetische neuronale Netz erweitert wird.
     \item Die Validierung erfolgte bisher nur qualitativ. Eine quantitative Validierung gegen experimentelle Zeitreihen ist ein n\"{a}chster Schritt.
     \item Weitere epigenetische Mechanismen (z.B. Risikofaktoren, Messungen aus Studien Interaktion mit Transkriptionsfaktoren) k\"{o}nnten einfach integriert werden, um das Modell zu erweitern.
-    \item Die Annahmen von Prohaska et al. müssten aktualisert und erweitert werden, um die Dynamik der Histonmodifikation bestmöglich abzubilden.
+    \item Die Annahmen von Prohaska et al. müssten aktualisert und erweitert werden, um die Dynamik der Histonmodifikation nach heutigem Forschungsstand bestmöglich über neue Regeln und Klassen abzubilden.
 \end{itemize}
 
 \section{Fazit}
@@ -260,7 +260,7 @@ Weiterhin können mit dieser Implementierung Erwartungswerte basierend auf verga
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.9\textwidth]{images/Histone_Prohaska_and_Markov_1000_autocor.png}
+  \includegraphics[width=0.9\textwidth]{images/Histone_Prohaska_and_Markov_1000_Autokorrelation.png}
   \caption{Autokorrelation im deterministischen Modell}
   \label{fig:PM_1000_A}
 \end{figure}
