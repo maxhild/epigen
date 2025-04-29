@@ -49,7 +49,7 @@ def plot_state_counts_and_equilibrium(csv_file):
         plt.grid(alpha=0.3)
         plt.tight_layout()
         plt.show()
-        plt.savefig("Markov_eq.png", dpi=300)
+        plt.savefig("Prohaska_eq.png", dpi=300)
 
         print(f'Equilibrium reached at step: {eq_step}')
     except FileNotFoundError:
@@ -58,4 +58,4 @@ def plot_state_counts_and_equilibrium(csv_file):
         print(f"Error while plotting state counts and equilibrium: {e}")
 
 if __name__ == "__main__":
-    plot_state_counts_and_equilibrium("Histone_Markov_1000.csv")
+    plot_state_counts_and_equilibrium("Histone_Prohaska_1000.csv")

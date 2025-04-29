@@ -1,4 +1,3 @@
-// /Users/Maxhi/Medizininformatik/Modellierung biologische Systeme/C Implementation Prohaska/epigenetic_net.cpp
 #include "epigenetic_net.h"
 #include <random>
 #include <fstream>

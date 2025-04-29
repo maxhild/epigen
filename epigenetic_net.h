@@ -12,14 +12,13 @@ enum class ModificationState {
     UBIQUITYLATED
 };
 
-// Class representing an epigenetic site
 class EpigeneticSite {
 private:
     ModificationState state;
     std::string position;
     
 public:
-    EpigeneticSite(); // Default-Konstruktor
+    EpigeneticSite(); 
     EpigeneticSite(const std::string& pos, ModificationState initialState = ModificationState::UNMODIFIED);
     void setState(ModificationState newState);
     ModificationState getState() const;
@@ -37,6 +36,5 @@ public:
     void simulateStep();
     std::map<std::string, EpigeneticSite>& getSites();
     void exportStateToCSV(const std::string& filename, int step, bool header = false);
-    // Wendet das deterministische Prohaska-Regelwerk an
     void applyProhaskaRules();
 };
