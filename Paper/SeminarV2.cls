@@ -631,9 +631,9 @@
 \newcommand\contentsname{Contents}
 \newcommand\listfigurename{List of Figures}
 \newcommand\listtablename{List of Tables}
-\newcommand\refname{References}
+\newcommand\refname{Quellenverzeichnis}
 \newcommand\indexname{Index}
-\newcommand\figurename{Fig.}
+\newcommand\figurename{Abbildung:}
 \newcommand\tablename{Table}
 \newcommand\partname{Part}
 \newcommand\appendixname{Appendix}

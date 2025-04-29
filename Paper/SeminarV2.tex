@@ -2,7 +2,6 @@
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath,array}
-\usepackage{hyperref}
 %***********************************************************************
 % !!!! IMPORTANT NOTICE ON TEXT MARGINS !!!!!
 %***********************************************************************
@@ -51,9 +50,9 @@
 % Remove the next three lines in case of a single institution
 \vspace{.1cm}\\
 Universit\"{a}t Leipzig, Institut f\"{u}r medizinische Informatik, Statistik und Epidemiologie\\
-Neues Augusteum, Augustuspl. 10, 04109 Leipzig - Germany
+Härtelstraße 16-18, 04107 Leipzig - Germany
 }
-See the repository: \href{https://github.com/maxhild/epigen}{maxhild/epigen}.
+
 
 %***********************************************************************
 % END OF AUTHORS INFORMATION AREA
@@ -74,6 +73,8 @@ See the repository: \href{https://github.com/maxhild/epigen}{maxhild/epigen}.
   Histonmodifikation basierend auf dem komputationalen Modell von Prohaska et al. simulieren.
   Dabei wurde der deterministische, regelbasierte Ansatz aus der Publikation mit einer 
   stochastischen Markovsimulation verglichen und letztendlich kombiniert.
+  \texttt{Coderepository: https://github.com/maxhild/epigen}
+
   \end{abstract}
   
 \section{Einleitung}
@@ -114,8 +115,9 @@ Das Modell beschreibt die Histonmodifikation als ein deterministisches System.
 Es definiert jeden Nukleosom‑Knoten durch zwei Flags für Acetylation (H3K27ac) und Methylation (H3K9me3) sowie einen Aktivitätsindikator. In jedem Zeitschritt werden alle Nukleosomen gleichzeitig nach folgenden Regeln aktualisiert: 
 Ein Nukleosom erwirbt Acetylation, falls sein linker Nachbar bereits acetylierte Kennzeichnungen besitzt, andernfalls erhält es Methylation, falls sein rechter Nachbar methy­liert ist. Diese strikt logischen Booleschen Operationen werden in der Methode \texttt{applyDeterministicProhaskaRules()} umgesetzt.
 Diese Zustände entscheiden nach heutiger Ansicht darüber, ob und wie die DNA an dieser Stelle für die Transkription verwendet werden kann.
-Die simplere Ansicht, dass die Zustände des Chromatins binär seien, wurde widerlegt. Filon et al. erkannten durch Principal Component Analysis fünf verschiedene 
-Typen von Chromatin. \cite{filon-2010}
+Die Ansicht, dass die Zustände des Chromatins binär seien, wurde widerlegt. Filon et al. erkannten durch Principal Component Analysis fünf verschiedene 
+Zustände von Chromatin. \cite{filion-2010} In diesem Modell ist zur Vereinfachung die Aktivität des Chromatins binär kodiert.
+Auch die Histonmodifikationen sind als binäre Zustände kodiert. 
 
 \section{Prohaska-Modell, (deterministischer Ansatz)}
 Das auf Prohaska et al. basierende Modell zeigt einen Ansatz, bei dem durch das Festlegen
@@ -212,7 +214,7 @@ Zuk\"{u}nftige Erweiterungen der Implementierung k\"{o}nnten eine parallele Simu
 Zudem könnte ein Messfehlerparameter eingeführt werden.
 Die Nutzung von weiteren experimentellen Daten kann zur Validierung des Modells sowie zur Simulation spezifischer genetischer Erkrankungen genutzt werden, um potenzielle epigenetische Therapieans\"{a}tze zu identifizieren.
 Weiterhin können mit dieser Implementierung Erwartungswerte basierend auf vergangenen Beobachtungen errechnet werden. So kann \"{u}ber l\"{a}ngere Zeit beobachtet werden, wie sich das epigenetische regulatorische System verhalten w\"{u}rde, wenn bestimmte Annahmen \"{u}ber die Histonmodifikation der Wahrheit entsprechen.
-
+\newpage
 \section{Abbildungen}
 
 
@@ -222,13 +224,6 @@ Weiterhin können mit dieser Implementierung Erwartungswerte basierend auf verga
   \caption{Visualisierung des stochastischen Modells mit den Wahrscheinlichkeiten für de-novo-methylierung im Tochterstrang und Fehlerrate der Methylierungserhaltung aus Fu et al. (2010) und 1000 Iterationen. \cite{fu-2010}}
   \label{fig:Fu_1000}
 \end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.9\textwidth]{images/Fu_eq.png}
-  \caption{Equilibrium bei Fu et al.}
-  \label{fig:Fu_eq}
-  \end{figure}
 
 \begin{figure}[htbp]
 \centering
@@ -261,13 +256,13 @@ Weiterhin können mit dieser Implementierung Erwartungswerte basierend auf verga
 \begin{figure}
   \centering
   \includegraphics[width=0.9\textwidth]{images/Histone_Prohaska_and_Markov_1000_Autokorrelation.png}
-  \caption{Autokorrelation im deterministischen Modell}
+  \caption{Autokorrelation im gemischten Modell aus Prohaska und Markov}
   \label{fig:PM_1000_A}
 \end{figure}
 
+\newpage
 
 \begin{footnotesize}
-\newpage
 \bibliographystyle{unsrt}
 \bibliography{own.bib}
 \end{footnotesize}
